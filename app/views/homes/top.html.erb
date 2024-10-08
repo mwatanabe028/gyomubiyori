@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <h1><strong>業務日和へようこそ</strong></h1>
+      <p>1日の終わりに日報を投稿しましょう。</p>
+    </div>
+  </div>
+
+
+  <% unless user_signed_in? %>
+    <div class="btn-wrapper mx-auto col-5">
+      <div class="row">
+        <%= link_to "Log in", new_user_session_path, class: "btn btn-sm btn-dark btn-block mb-4" %>
+      </div>
+      <div class="row">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-sm btn-dark btn-block" %>
+      </div>
+    </div>
+  <% end %>
+</div>
