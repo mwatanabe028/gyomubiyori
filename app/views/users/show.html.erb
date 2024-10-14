@@ -1,14 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
-        <h1>マイページ</h1>
+        <h1>マイページ</h1> <br />
+        <p>Name</p>
 
         <%= @user.name %>
 
         <% if @user == current_user %><br />
          　<div class="btn-wrapper mx-auto col-10">
         　　　<div class="row">
-          　  　<%= link_to "ユーザ情報の編集", edit_user_registration_path, class: "btn btn-sm btn-info btn-block mb-3" %>
+          　  　<%= link_to "ユーザ情報の編集", edit_user_registration_path, class: "btn btn-sm btn-dark btn-block" %>
         　　　</div>
         　</div>
         <% end %>
