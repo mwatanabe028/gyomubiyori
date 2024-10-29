@@ -1,2 +1,28 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+  <h2>投稿詳細</h2>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to user_path(@user) do %>
+            <%= @user.name %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to post_path(@post) do %>
+            <%= @post.title %>
+          <% end %>
+        </td>
+        <td>
+          <%= @post.body %>
+        </td>
+      </tr>
+      <% if @user == current_user %>
+          <td>
+            <%= link_to "編集", edit_post_path(@post)%>
+          </td>
+          <td>
+            <%= link_to "削除", post_path(@post), method: :delete %>
+          </td>
+      <% end %>
+    </tbody>
+  </table>

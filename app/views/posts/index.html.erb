@@ -1,0 +1,7 @@
+<h1>投稿一覧</h1>
+<% @posts.each do |post| %>
+  <div>
+    <p>title: <%= post.title %></p>
+    <p>body: <%= post.body %></p>
+  </div>
+<% end %>
