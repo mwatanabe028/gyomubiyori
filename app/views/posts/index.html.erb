@@ -1,7 +1,33 @@
-<h1>投稿一覧</h1>
-<% @posts.each do |post| %>
-  <div>
-    <p>title: <%= post.title %></p>
-    <p>body: <%= post.body %></p>
+  <body>
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+       <header>
+        <h2>投稿一覧</h2>
+        <table>
+       </header>
+           <colgroup>
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+          </colgroup>
+        <thead>
+          <tr>
+            <th class="user_id">氏名</th>
+            <th class="title">タイトル</th>
+            <th colspan="1"></th>
+          </tr>
+        </thead>
+       <tbody>
+       <% @posts.each do |post| %>
+        <tr>
+          <td><%= post.user.name %></td>
+          <td><%= post.title %></td>
+          <td><%= link_to '詳細', post_path(post.id) %></td>
+        <% end %>
+      </tbody>
+      </table>
+    </div>
+   </div>
   </div>
-<% end %>
+</body>

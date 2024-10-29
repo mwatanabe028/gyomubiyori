@@ -1,19 +1,26 @@
-
-      <h1>投稿編集</h1>
+  <body>
+    <div class="container">
+     <div class="row">
+      <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+       <header>
+        <h2>投稿編集</h2>
+       </header>
       <%= form_with model: @post, mothod: :patch do |f| %>
         <div>
-          <%= f.label :title %>
-          <%= f.text_field :title %>
+		    <%= f.label :タイトル %><br>
+		    <%= f.text_field :title, autofocus: true %>
         </div>
         <div>
-          <%= f.label :body %>
-          <%= f.text_area :body %>
+          <%= f.label :本文 %><br>
+		      <%= f.text_area :body ,  class: 'form-control',size: "20x10"%>
         </div>
         <div>
           <%= f.submit "更新" %>
         </div>
       <% end %>
 
-      <%= link_to "確認", posts_path(@post) %>
-      |
-      <%= link_to "戻る", posts_path %>
+       <%= link_to "戻る", post_path %>
+    </div>
+  </div>
+</div>
+</doby>

@@ -1,0 +1,20 @@
+<h2>マイページ</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>ユーザ名</th>
+      <th colspan="1"></th>
+      <th><%= @user.name %></th>
+    </tr>
+  </tbody>
+</table>
+<div class="row">
+    <% if @user == current_user %><br />
+   　<div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
+   　　<div class="row">
+     　<%= link_to "ユーザ情報の編集", edit_user_registration_path, class: "btn btn-sm btn-dark btn-block" %>
+     　<%= link_to "投稿", new_post_path, class: "btn btn-sm btn-dark btn-block" %>
+  　　</div>
+    </div>
+   <% end %>
+</div>
